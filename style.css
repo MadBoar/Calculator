@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+button {
+    border-radius: 12px;
+    background-color: lightgray;
+    font-size: 18px;
+}
+
+.calc-container{
+    width: 400px;
+    height: 500px;
+    margin-top: 50px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: slategray;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.screen-container{
+    flex: 0.25;
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer, .query{
+    flex: 1;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 5px;    
+}
+
+.query{
+    align-self: flex-end;
+    display: flex;
+    align-items: end;
+}
+
+/* Buttons */
+.btn-container{
+    flex: 0.75;
+    margin: 15px;
+    margin-top: 0;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: darkgray;
+    display: flex;
+}
+
+.num-container, .opr-container{
+    margin: 6px;
+}
+
+.num-container{
+    margin-right: 0;
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap; 
+}
+
+.num{
+    width: 30%;
+    height: auto;
+}
+
+.zero, .dot{
+    order: 1;
+}
+
+.opr-container{
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.opr{
+    flex: 1;
+}
+
+
+
