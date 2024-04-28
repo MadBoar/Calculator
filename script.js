@@ -29,11 +29,50 @@ function btnHandler() {
     }
 }
 
-function evalQuery(exp){
-    console.log(exp);
+function evalExp(exp){
+
+    if(exp.includes("*") || exp.includes("/")){
+
+        let index = exp.findIndex(el => el === '*' || el ==='/');
+
+        let first = parseFloat(exp[index - 1]);
+        let second = parseFloat(exp[index + 1]);
+
+        if(exp[index] === "*") {
+            exp.splice(index-1,3, (first * second));
+            return evalExp(exp);
+        } else {
+            exp.splice(index-1,3, (first / second))
+            return evalExp(exp);
+        }
+    } else if (exp.includes("+") || exp.includes("-")) {
+        let index = exp.findIndex(el => el === '+' || el ==='-');
+
+        let first = parseFloat(exp[index - 1]);
+        let second = parseFloat(exp[index + 1]);
+
+        if(exp[index] === "+") {
+            exp.splice(index-1,3, (first + second));
+            return evalExp(exp);
+        } else {
+            exp.splice(index-1,3, (first - second))
+            return evalExp(exp);
+        }
+    }
+
+    return exp;
 }
 
+function evalQuery(exp){
+    answer.textContent = exp;
+    const components = exp.split(/([-+*\/])/g);
 
+    const sum = evalExp(components);
+    answer.textContent = sum;
+    console.log(sum)
+}
+
+// -+*\/
 
 
 buttons.forEach(btn => {
